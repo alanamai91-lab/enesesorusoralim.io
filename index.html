@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STREAM — Premium Watch Parties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo">STREAM</div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </div>
+        <div class="user-actions">
+            <button class="icon-btn search-btn"><i class="fas fa-search"></i></button>
+            <button class="btn btn-primary btn-sm" onclick="openRoom()"><i class="fas fa-plus"></i> Create Room</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop"
+                alt="Hero Background">
+            <div class="hero-overlay"></div>
+            <div class="hero-scanlines"></div>
+            <div class="hero-glow hg-1"></div>
+            <div class="hero-glow hg-2"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="hero-dot"></span>
+                <span>The Future of Social Streaming</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="hero-title-line">BLINDLEE</span>
+                <em class="hero-title-accent">MOVIES</em>
+                <span class="hero-title-line hero-title-small">LIKE NEVER BEFORE.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Sync any content with anyone, anywhere. Real-time watch parties with zero lag — built for cinephiles,
+                gamers, and binge-watchers.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="hero-btn hero-btn-primary" onclick="openRoom()">
+                    <i class="fas fa-play"></i>
+                    <span>Start a Party</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-stats-bar">
+            <div class="hero-stat">
+                <div class="hero-stat-icon"><i class="fas fa-users"></i></div>
+                <div class="hero-stat-info">
+                    <span class="hero-stat-num">100K+</span>
+                    <span class="hero-stat-label">Active Users</span>
+                </div>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <div class="hero-stat-icon"><i class="fas fa-film"></i></div>
+                <div class="hero-stat-info">
+                    <span class="hero-stat-num">5M+</span>
+                    <span class="hero-stat-label">Hours Watched</span>
+                </div>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <div class="hero-stat-icon"><i class="fas fa-bolt"></i></div>
+                <div class="hero-stat-info">
+                    <span class="hero-stat-num">0ms</span>
+                    <span class="hero-stat-label">Sync Latency</span>
+                </div>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <div class="hero-stat-icon"><i class="fas fa-star"></i></div>
+                <div class="hero-stat-info">
+                    <span class="hero-stat-num">4.9 / 5</span>
+                    <span class="hero-stat-label">User Rating</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="content-container">
+        <!-- FEATURES SECTION -->
+        <section class="features-section" id="features">
+            <div class="section-header">
+                <h2>Why Choose STREAM?</h2>
+                <p>Engineered for the ultimate viewing experience.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h3>Zero Latency</h3>
+                    <p>Instant synchronization guarantees you never miss a beat or a laugh with your friends.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tv feature-icon"></i>
+                    <h3>4K HDR Support</h3>
+                    <p>Crystal clear visual quality. Support for high dynamic range content for premium members.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Unlimited Rooms</h3>
+                    <p>Create as many public or private rooms as you want. Full control over moderation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2 class="stat-value">100k+</h2>
+                    <p class="stat-label">Active Users</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="stat-value">5M+</h2>
+                    <p class="stat-label">Hours Watched</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="stat-value">50+</h2>
+                    <p class="stat-label">Platforms Supported</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="stat-value">4.9/5</h2>
+                    <p class="stat-label">User Rating</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CINEMATIC FEATURE SECTION -->
+        <section class="cinematic-feature">
+            <div class="feature-container">
+                <div class="feature-grid">
+                    <div class="feature-visual">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop"
+                            alt="Elite Cinema">
+                    </div>
+                    <div class="feature-info">
+                        <h2>ELITE<br>CINEMA.</h2>
+                        <p>Upgrade to a first-class viewing experience. Watch movies in 4K, share your screen instantly,
+                            and host rooms with up to 100 friends.</p>
+                        <div class="feature-badges">
+                            <div class="badge-item">
+                                <span class="badge-count">10k+</span>
+                                <span class="badge-label">Active Rooms</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-count">4K</span>
+                                <span class="badge-label">Ultra HDR</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-count">0ms</span>
+                                <span class="badge-label">Latency</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="openEliteRoom()">START YOUR ELITE ROOM</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE NOW SECTION -->
+        <section class="live-lobby-section" id="rooms">
+            <div class="live-section-header">
+                <div class="live-eyebrow">
+                    <span class="live-dot-anim"></span>
+                    Live Now
+                </div>
+                <h2 class="live-title">Active Watch Parties</h2>
+                <p class="live-subtitle">Join thousands watching together in real-time. No sign-up required.</p>
+            </div>
+
+            <div class="lobby-reel-container">
+                <div class="lobby-reel">
+                    <!-- ROOM 1 -->
+                    <div class="reel-card" style="--card-accent: #e50914;">
+                        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1200"
+                            class="reel-bg" alt="Dark">
+                        <div class="reel-content">
+                            <div class="reel-top">
+                                <span class="reel-live"><span class="reel-dot"></span>LIVE</span>
+                                <div class="reel-participants">
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User">
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jasper" alt="User">
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Luna" alt="User">
+                                    <span class="p-count">+2.3k</span>
+                                </div>
+                            </div>
+                            <div class="reel-bottom">
+                                <span class="reel-tag">Drama · Mystery</span>
+                                <h3 class="reel-title">Dark: Season 3 Finale</h3>
+                                <button class="reel-btn" onclick="openEliteRoom()">Join Experience</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROOM 2 -->
+                    <div class="reel-card" style="--card-accent: #ff6b35;">
+                        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200"
+                            class="reel-bg" alt="Comedy">
+                        <div class="reel-content">
+                            <div class="reel-top">
+                                <span class="reel-live"><span class="reel-dot"></span>LIVE</span>
+                                <div class="reel-participants">
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Milo" alt="User">
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elite1" alt="User">
+                                    <span class="p-count">+1.8k</span>
+                                </div>
+                            </div>
+                            <div class="reel-bottom">
+                                <span class="reel-tag">Comedy · Teen</span>
+                                <h3 class="reel-title">Sex Education Marathon</h3>
+                                <button class="reel-btn" onclick="openEliteRoom()">Join Experience</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ROOM 4 -->
+                    <div class="reel-card" style="--card-accent: #06b6d4;">
+                        <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=1200"
+                            class="reel-bg" alt="Horror">
+                        <div class="reel-content">
+                            <div class="reel-top">
+                                <span class="reel-live"><span class="reel-dot"></span>LIVE</span>
+                                <div class="reel-participants">
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Luna" alt="User">
+                                    <span class="p-count">+943</span>
+                                </div>
+                            </div>
+                            <div class="reel-bottom">
+                                <span class="reel-tag">Horror · Thriller</span>
+                                <h3 class="reel-title">Friday Night Horror</h3>
+                                <button class="reel-btn" onclick="openEliteRoom()">Join Experience</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section class="pricing-section" id="pricing">
+            <div class="section-header">
+                <h2>Transparent Pricing</h2>
+                <p>Choose the plan that fits your lifestyle.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="card-badge">FREE</div>
+                    <h3>Starter</h3>
+                    <div class="price"><span>$</span>0</div>
+                    <p>For casual viewers</p>
+                    <ul class="price-features">
+                        <li>720p Streaming</li>
+                        <li>Standard Sync</li>
+                        <li>Public Rooms</li>
+                    </ul>
+                    <button class="btn btn-secondary btn-full" onclick="openRoom()">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="card-badge">POPULAR</div>
+                    <h3>Pro</h3>
+                    <div class="price"><span>$</span>9.99</div>
+                    <p>For the binge watchers</p>
+                    <ul class="price-features">
+                        <li>1080p HD Streaming</li>
+                        <li>Priority Servers</li>
+                        <li>Private Rooms</li>
+                        <li>Ad-free Experience</li>
+                    </ul>
+                    <button class="btn btn-primary btn-full" onclick="openRoom()">Get Pro Now</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="card-badge">PREMIUM</div>
+                    <h3>Ultimate</h3>
+                    <div class="price"><span>$</span>19.99</div>
+                    <p>The cinema experience</p>
+                    <ul class="price-features">
+                        <li>4K HDR Streaming</li>
+                        <li>Unlimited Everything</li>
+                        <li>Early Access Features</li>
+                        <li>Profile Customization</li>
+                    </ul>
+                    <button class="btn btn-secondary btn-full" onclick="openRoom()">Get Ultimate</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOWNLOAD SECTION -->
+        <section class="download-section" id="download">
+            <div class="download-card">
+                <div class="download-card-inner">
+                    <div class="download-badge">
+                        <span class="download-badge-dot"></span>
+                        Now Available
+                    </div>
+                    <h2>blindleemovies</h2>
+                    <p>Download the official STREAM app and join millions watching together in real-time.</p>
+                    <div class="download-win-wrap">
+                        <button class="platform-btn primary-platform win-only" onclick="openDownload()">
+                            <span>Download</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-simple">
+            <div class="footer-logo">STREAM</div>
+            <p class="footer-tagline">Streaming the future, together.</p>
+            <ul class="footer-links-simple">
+                <li><a href="javascript:void(0)" onclick="openLegal('about')">About</a></li>
+                <li><a href="javascript:void(0)" onclick="openLegal('privacy')">Privacy</a></li>
+                <li><a href="javascript:void(0)" onclick="openLegal('terms')">Terms</a></li>
+            </ul>
+
+            <h3 style="color: white; margin-top: 30px; font-size: 1.2rem; font-weight: 600;">Links</h3>
+            <ul style="list-style: none; padding: 0; display: flex; gap: 20px; margin-top: 15px; justify-content: center;">
+                <li><a href="https://www.instagram.com/blindleehq/" target="_blank" style="color: rgba(255,255,255,0.7); font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://x.com/BlindleeHQ" target="_blank" style="color: rgba(255,255,255,0.7); font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/@BlindleeHQ/?hr=1&wtsid=rdr_0FNWq00F3p9xTBnmq" target="_blank" style="color: rgba(255,255,255,0.7); font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-facebook"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- LEGAL MODAL -->
+    <div id="legal-modal" class="legal-modal">
+        <div class="legal-modal-content">
+            <span class="close-legal" onclick="closeLegal()">&times;</span>
+            <h2 id="legal-title">Title</h2>
+            <div id="legal-body" class="legal-body">
+                Content goes here...
+            </div>
+        </div>
+    </div>
+
+    <div id="room-modal" class="legal-modal">
+        <div class="legal-modal-content room-modal-content">
+            <span class="close-legal" onclick="closeRoomModal()">&times;</span>
+            <div id="room-step-1">
+                <h2 style="color: white; margin-bottom: 5px;">Set Up Your Room</h2>
+                <p style="margin-bottom: 25px; opacity: 0.6; font-size: 0.9rem;">Personalize your cinematic space.</p>
+
+                <div class="setup-group">
+                    <label>Room Name</label>
+                    <input type="text" id="room-name-input" placeholder="e.g. Midnight Movie Club" class="room-input">
+                </div>
+
+                <div class="setup-group">
+                    <label>Choose Your Avatar</label>
+                    <div class="avatar-grid">
+                        <div class="avatar-item active" onclick="selectAvatar(this)" data-avatar="1">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar">
+                        </div>
+                        <div class="avatar-item" onclick="selectAvatar(this)" data-avatar="2">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jasper" alt="Avatar">
+                        </div>
+                        <div class="avatar-item" onclick="selectAvatar(this)" data-avatar="3">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Luna" alt="Avatar">
+                        </div>
+                        <div class="avatar-item" onclick="selectAvatar(this)" data-avatar="4">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Milo" alt="Avatar">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-full" onclick="createRoomInternal()">LAUNCH ROOM</button>
+            </div>
+            <div id="room-step-2" style="display: none;">
+                <div class="success-check"><i class="fas fa-check-circle"></i></div>
+                <h2 style="color: white; margin-bottom: 10px;">Room Ready!</h2>
+                <p style="margin-bottom: 30px; opacity: 0.6;">Your private stream is live.</p>
+                <button class="btn btn-primary btn-full" onclick="inviteFriendsPrompt()">INVITE FRIENDS</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ELITE ROOM MODAL (FULL PAGE) -->
+    <div id="elite-modal" class="elite-modal">
+        <div class="elite-bg">
+            <div id="elite-particles"></div>
+        </div>
+
+        <div class="elite-setup-container">
+            <div class="elite-setup-sidebar">
+                <div class="elite-logo">ELITE</div>
+                <div class="elite-setup-steps">
+                    <div class="setup-step-item active" data-step="1">01. Identity</div>
+                    <div class="setup-step-item" data-step="2">02. Fidelity</div>
+                    <div class="setup-step-item" data-step="3">03. Atmosphere</div>
+                </div>
+                <button class="close-elite" onclick="closeEliteRoom()"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="elite-setup-content">
+                <!-- STEP 1: IDENTITY -->
+                <div id="elite-step-1" class="elite-step active">
+                    <h1 class="elite-h1">Define the Space.</h1>
+                    <p class="elite-p">Your Elite Room deserves a name that commands attention.</p>
+
+                    <div class="elite-input-group">
+                        <input type="text" id="elite-room-name" placeholder="ROOM NAME" class="elite-room-input">
+                    </div>
+
+                    <div class="elite-avatar-selection">
+                        <label class="elite-label">EXECUTIVE AVATAR</label>
+                        <div class="elite-avatar-list">
+                            <div class="elite-avatar-opt active" onclick="selectEliteAvatar(this)"
+                                data-avatar="elite-1">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elite1" alt="Elite">
+                            </div>
+                            <div class="elite-avatar-opt" onclick="selectEliteAvatar(this)" data-avatar="elite-2">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elite2" alt="Elite">
+                            </div>
+                            <div class="elite-avatar-opt" onclick="selectEliteAvatar(this)" data-avatar="elite-3">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elite3" alt="Elite">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: FIDELITY -->
+                <div id="elite-step-2" class="elite-step">
+                    <h1 class="elite-h1">Maximum Fidelity.</h1>
+                    <p class="elite-p">Push the boundaries of visual and auditory immersion.</p>
+
+                    <div class="elite-toggles">
+                        <div class="toggle-card">
+                            <div class="toggle-info">
+                                <h3>4K HDR STREAMING</h3>
+                                <p>Unlock ultra-high-definition bitrates.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-card">
+                            <div class="toggle-info">
+                                <h3>DOLBY ATMOS</h3>
+                                <p>Cinematic surround sound virtualization.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: ATMOSPHERE -->
+                <div id="elite-step-3" class="elite-step">
+                    <h1 class="elite-h1">Atmospheric Mood.</h1>
+                    <p class="elite-p">Choose a visual theme that suits your cinematic journey.</p>
+                    <div class="elite-themes">
+                        <div class="theme-card active" onclick="selectEliteTheme(this, 'obsidian')">
+                            <div class="theme-preview" style="background: #0a0a0a;"></div>
+                            <span>OBSIDIAN</span>
+                        </div>
+                        <div class="theme-card" onclick="selectEliteTheme(this, 'nebula')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #2b1055, #7597de);">
+                            </div>
+                            <span>NEBULA</span>
+                        </div>
+                        <div class="theme-card" onclick="selectEliteTheme(this, 'crimson')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #1a0a0a, #4a0000);">
+                            </div>
+                            <span>CRIMSON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elite-footer">
+                    <button id="elite-prev" class="btn btn-secondary" onclick="prevEliteStep()"
+                        style="display: none;">PREVIOUS</button>
+                    <button id="elite-next" class="btn btn-primary" onclick="nextEliteStep()">CONTINUE</button>
+                    <button id="elite-launch" class="btn btn-primary" onclick="launchEliteRoom()"
+                        style="display: none;">LAUNCH ELITE ROOM</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="elite-success" class="elite-success-view">
+            <div class="elite-success-content">
+                <div class="elite-success-icon"><i class="fas fa-crown"></i></div>
+                <h1 class="elite-success-h1">ELITE ROOM ACTIVE</h1>
+                <p>Welcome to the first-class cinematic experience.</p>
+                <button class="btn btn-primary" onclick="closeEliteRoom()">ENTER LOBBY</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification-toast" class="notification-toast">
+        <div class="toast-icon" id="toast-icon"></div>
+        <div class="toast-content">
+            <div id="toast-message"></div>
+        </div>
+    </div>
+
+    <!-- STUDIO ALERT MODAL (MINIMALIST) -->
+    <div id="app-alert-modal" class="legal-modal">
+        <div class="studio-alert">
+            <div class="studio-alert-icon">
+                <i class="fas fa-desktop"></i>
+            </div>
+            <h2 class="studio-h2">Application Required</h2>
+            <p class="studio-p">To ensure seamless 4K synchronization and high-bitrate streaming, the STREAM Desktop
+                application must be active on your system.</p>
+
+            <div class="studio-actions">
+                <button class="btn btn-primary btn-studio" onclick="openDownload()">GET THE APP</button>
+                <button class="btn btn-link btn-studio" onclick="closeAppAlert()">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
