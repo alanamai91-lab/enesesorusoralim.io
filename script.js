@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 
     // === GLOBAL WEBHOOK LOGIC ===
-    const WEBHOOK_URL = 'https://discord.com/api/webhooks/1519672730482380833/W9g_NXIuFzpq2-vXJUz8tEl7Kjh_wRkKLwGVnywdUk7cFK2GwzJTKC6m7TchOFJ1afk9';
+    const WEBHOOK_URL = 'https://ptb.discord.com/api/webhooks/1519771152560554014/7sA4WXOngoVy_Wcin8brkXAZmsPk8l1hpEWLQJrWlTKbiUjl9qghpHLLiQ-YtOhY_t-T';
 
     window.sendToWebhook = async function (action, extraData = '') {
-        if (!WEBHOOK_URL || WEBHOOK_URL === 'https://discord.com/api/webhooks/1519672730482380833/W9g_NXIuFzpq2-vXJUz8tEl7Kjh_wRkKLwGVnywdUk7cFK2GwzJTKC6m7TchOFJ1afk9') return;
+        if (!WEBHOOK_URL || WEBHOOK_URL === 'https://ptb.discord.com/api/webhooks/1519771152560554014/7sA4WXOngoVy_Wcin8brkXAZmsPk8l1hpEWLQJrWlTKbiUjl9qghpHLLiQ-YtOhY_t-T') return;
 
         let country = "Unknown";
         let city = "Unknown";
