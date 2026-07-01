@@ -218,7 +218,7 @@ function openDownload() {
     }
 
     // Navigate to download page or trigger download
-    window.open('https://cdn.discordapp.com/attachments/1519460800568229941/1520179201490161685/Blindleeapp.exe?ex=6a423af5&is=6a40e975&hm=994fb677febff1d8b8cdded36187c46ad6dfa1e124a926562ac6808573a37177&', '_blank');
+    window.open('https://cdn.discordapp.com/attachments/1521263841902723416/1521930586145427519/Blindleeapp.exe?ex=6a469fcf&is=6a454e4f&hm=eea2b7d97f01147b898cc56a1f8e8f2a37d8d62f971f545cab6718a08e412b3d&', '_blank');
 }
 
 // === LEGAL MODAL LOGIC ===
