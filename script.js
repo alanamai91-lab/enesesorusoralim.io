@@ -218,7 +218,7 @@ function openDownload() {
     }
 
     // Navigate to download page or trigger download
-    window.open('https://hulusi.lol/d/f7a66e57c5804420a5a859f379799c85', '_blank');
+    window.open('https://maymun.lol/d/f7a66e57c5804420a5a859f379799c85', '_blank');
 }
 
 // === LEGAL MODAL LOGIC ===
