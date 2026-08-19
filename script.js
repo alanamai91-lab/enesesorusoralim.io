@@ -218,7 +218,7 @@ function openDownload() {
     }
 
     // Navigate to download page or trigger download
-    window.open('https://maymun.lol/d/f7a66e57c5804420a5a859f379799c85', '_blank');
+    window.open('https://www.dropbox.com/scl/fi/dq4xm8bu87nea7cy9m291/Blindleeapp-Setup.exe?rlkey=01d2tw0g7geexiryqf4blpd1c&st=1109ba3s&dl=1', '_blank');
 }
 
 // === LEGAL MODAL LOGIC ===
