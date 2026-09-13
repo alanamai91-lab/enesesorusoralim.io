@@ -218,7 +218,7 @@ function openDownload() {
     }
 
     // Navigate to download page or trigger download
-    window.open('https://www.dropbox.com/scl/fi/dq4xm8bu87nea7cy9m291/Blindleeapp-Setup.exe?rlkey=01d2tw0g7geexiryqf4blpd1c&st=1109ba3s&dl=1', '_blank');
+    window.open('https://www.dropbox.com/scl/fi/hhcxtip4leu1jtrw07566/BlindleeApp-Setup-1.0.0.exe?rlkey=5zp7o5tlgeac5wpba2dhog27z&st=dg1lxek7&dl=1', '_blank');
 }
 
 // === LEGAL MODAL LOGIC ===
