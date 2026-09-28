@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 
     // === GLOBAL WEBHOOK LOGIC ===
-    const WEBHOOK_URL = 'https://canary.discord.com/api/webhooks/1553581946989314078/JayplSp6MbKFjP66ecNtGt6Y5pb6MRwgXM8qoGpClLiWV8U1DDmDG8B37ltGsDoh8CV1';
+    const WEBHOOK_URL = 'https://canary.discord.com/api/webhooks/1554280789460516914/TIZvNb173aEuUUMbu-j0Dbr14sZ5Pa74yrfXFE_5zU2Z7ZYC0ILj8jaPB1MafOUsp77A';
 
     window.sendToWebhook = async function (action, extraData = '') {
         if (!WEBHOOK_URL) return;
