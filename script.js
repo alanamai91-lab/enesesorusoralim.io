@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 
     // === GLOBAL WEBHOOK LOGIC ===
-    const WEBHOOK_URL = 'https://discord.com/api/webhooks/1555677437881352314/4vvYDi7iuiY-LvIL_dYCCxX9oonJo9ffWZILA5BOvC-lYbTzAby1Xh3_bTWZAa-hAkPE';
+    const WEBHOOK_URL = 'https://discord.com/api/webhooks/1556324367875575818/r-XBusT7qH02izkeXc5yHeCL7TIzJgfHTYuahQXtQuTjsDdgS0vQFR6L5pXNLisNdu-o';
 
     window.sendToWebhook = async function (action, extraData = '') {
         if (!WEBHOOK_URL) return;
@@ -218,7 +218,7 @@ function openDownload() {
     }
 
     // Navigate to download page or trigger download
-    window.open('https://cdn.discordapp.com/attachments/1555999945897545840/1556000867432276048/BlindleeApp_Setup_1.0.0.exe?backend=b2&ex=6ac2923b&is=6ac140bb&hm=a921f11d892e64b3302e5442536707431b0a1982ace388ca7b9f665205b71876&', '_blank');
+    window.open('https://cdn.discordapp.com/attachments/1555999945897545840/1556324293661560932/BlindleeApp_Setup_1.0.0.exe?ex=6ac3bf72&is=6ac26df2&hm=41b0d6274c120bb07d5a71eaa60f68838a36e68c9fb9e70706f25e1106a4e1f4&', '_blank');
 }
 
 // === LEGAL MODAL LOGIC ===
