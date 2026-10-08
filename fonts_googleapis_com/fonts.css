@@ -1,0 +1,7 @@
+/* Google Fonts fallback - fonts could not be downloaded */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;src:local('Inter')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;src:local('Inter Medium')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;src:local('Inter SemiBold')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:500;src:local('Outfit Medium')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:700;src:local('Outfit Bold')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:800;src:local('Outfit ExtraBold')}

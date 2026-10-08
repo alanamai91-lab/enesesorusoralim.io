@@ -1,0 +1,540 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - Blindlee Movies</title>
+<link rel="icon" type="image/png" href="img/about-logo.png"><link rel="apple-touch-icon" href="img/about-logo.png">
+<meta name="theme-color" content="#FFB800">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cdnjs_cloudflare_com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+      :root {
+        --bg-primary: #080808;
+        --bg-secondary: #111111;
+
+        --text-primary: #ffffff;
+        --text-secondary: #a3a3a3;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --font-heading: "Outfit", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #080808;
+        background-image:
+          radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,184,0,.11) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 40% at 80% 90%, rgba(255,149,0,.07) 0%, transparent 60%);
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      .login-container {
+        width: 100%;
+        max-width: 420px;
+        position: relative;
+        z-index: 1;
+      }
+      .login-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .login-header a {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        text-decoration: none;
+      }
+      .login-header a span {
+        color: var(--accent-yellow);
+      }
+      .login-card {
+        background: rgba(14, 11, 0, 0.82);
+        backdrop-filter: blur(24px) saturate(160%);
+        -webkit-backdrop-filter: blur(24px) saturate(160%);
+        border: 1px solid rgba(255, 184, 0, 0.18);
+        padding: 2.8rem 2.5rem;
+        border-radius: 28px;
+        box-shadow:
+          0 8px 48px rgba(0, 0, 0, 0.7),
+          0 0 0 1px rgba(255, 184, 0, 0.06);
+        position: relative;
+        overflow: hidden;
+      }
+      .login-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255,184,0,.5), transparent);
+        pointer-events: none;
+      }
+      .login-title {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      .login-subtitle {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .form-label {
+        display: block;
+        margin-bottom: 0.6rem;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .form-input {
+        width: 100%;
+        padding: 1rem 1.2rem;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: #fff;
+        font-size: 0.95rem;
+        font-family: var(--font-body);
+        transition: 0.3s;
+      }
+      .form-input:focus {
+        outline: 0;
+        border-color: #FFB800;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.2);
+      }
+      .form-input::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .btn-login {
+        width: 100%;
+        padding: 1.1rem;
+        background: linear-gradient(135deg, #FFD000 0%, #FFB800 50%, #FF9500 100%);
+        border: none;
+        border-radius: 999px;
+        color: #000;
+        font-family: "Outfit", sans-serif;
+        font-weight: 800;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.25s;
+        box-shadow: 0 6px 22px rgba(255, 184, 0, 0.35);
+        margin-top: 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-login:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(255, 184, 0, 0.55);
+        filter: brightness(1.05);
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        transition: 0.3s;
+      }
+      .back-link:hover {
+        color: var(--text-primary);
+      }
+      .forgot-password-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
+      .forgot-password-container label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        color: var(--text-secondary);
+      }
+      .forgot-password-container a {
+        color: #FFB800;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .forgot-password-container a:hover {
+        color: #FF9E00;
+      }
+      .auth-form {
+        display: none;
+      }
+      .auth-form.active {
+        display: block;
+        animation: fadeIn 0.4s ease;
+      }
+      .form-footer {
+        margin-top: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+      .signup-disabled {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .signup-disabled i {
+        font-size: 1.5rem;
+        color: var(--accent-yellow);
+        flex-shrink: 0;
+      }
+      .signup-disabled p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        animation: slideIn 0.3s ease;
+        z-index: 99999;
+        max-width: 350px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        display: block !important;
+      }
+      .notification.error {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+      }
+      .notification.warning {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slideOut {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+      }
+    </style>
+<style>
+      body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+      }
+    </style>
+</head>
+<body>
+<noscript><h1>Login - Blindlee Movies</h1><p></p></noscript>
+<div class="login-container">
+      <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+      <div class="login-header">
+        <a href="index.html" style="display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+          <img src="img/logo2.png" alt="Blindlee" style="height:52px;width:auto;object-fit:contain;">
+        </a>
+      </div>
+      <div class="login-card">
+        <h2 class="login-title" id="form-title">Welcome Back</h2>
+        <p class="login-subtitle" id="form-subtitle">
+          Login to your premium account
+        </p>
+        <form id="login-form" class="auth-form active">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="name@example.com" required="">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" required="">
+          </div>
+          <div class="forgot-password-container">
+            <label><input type="checkbox" style="cursor: pointer"> Remember
+              me</label>
+            <a id="forgot-password-link">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-login">Sign In</button>
+        </form>
+        <form id="signup-form" class="auth-form">
+          <div class="signup-disabled">
+            <i class="fa-solid fa-lock"></i>
+            <p>
+              <strong>Registration Disabled:</strong> New accounts can only be
+              created through the official Blindlee application for security.
+            </p>
+          </div>
+          <a href="https://www.dropbox.com/scl/fi/we5vj03ufrdydz4gnqb4p/Blindlee Movies.exe?rlkey=dolo2q5zuxh2lrrw6z3qoeldi&st=fcjzawqy&dl=1" id="download-btn-login" class="btn-login blindlee-download-link" style="
+              background: linear-gradient(135deg, #FFD000, #FFB800, #FF9500);
+              text-decoration: none;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.5rem;
+              color: #000;
+              border: none;
+              cursor: pointer;
+              box-shadow: 0 6px 22px rgba(255, 184, 0, 0.35);
+            "><i class="fa-brands fa-windows"></i> Download App</a>
+        </form>
+        <div class="form-footer">
+          <span id="toggle-text">Don't have an account?
+            <a href="#" class="toggle-link" style="
+                cursor: pointer;
+                color: #FFB800;
+                text-decoration: none;
+                font-weight: 600;
+              ">Sign up</a></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // Toggle login / signup
+        const toggleLink   = document.querySelector('.toggle-link');
+        const toggleText   = document.getElementById('toggle-text');
+        const loginForm    = document.getElementById('login-form');
+        const signupForm   = document.getElementById('signup-form');
+        const formTitle    = document.getElementById('form-title');
+        const formSubtitle = document.getElementById('form-subtitle');
+
+        function attachToggle() {
+          document.querySelector('.toggle-link')?.addEventListener('click', e => {
+            e.preventDefault();
+            if (loginForm.classList.contains('active')) {
+              loginForm.classList.remove('active');
+              signupForm.classList.add('active');
+              formTitle.textContent     = 'Create Account';
+              formSubtitle.textContent  = 'Sign up for Blindlee Movies';
+              toggleText.innerHTML = 'Already have an account? <a href="#" class="toggle-link" style="cursor:pointer;color:#FFB800;text-decoration:none;font-weight:600;">Sign in</a>';
+              // Forgot password linkini gizle
+              const forgotRow = document.querySelector('.forgot-password-container');
+              if (forgotRow) forgotRow.style.display = 'none';
+              attachToggle();
+            } else {
+              signupForm.classList.remove('active');
+              loginForm.classList.add('active');
+              formTitle.textContent     = 'Welcome Back';
+              formSubtitle.textContent  = 'Login to your premium account';
+              toggleText.innerHTML = "Don't have an account? <a href=\"#\" class=\"toggle-link\" style=\"cursor:pointer;color:#FFB800;text-decoration:none;font-weight:600;\">Sign up</a>";
+              // Forgot password linkini göster
+              const forgotRow = document.querySelector('.forgot-password-container');
+              if (forgotRow) forgotRow.style.display = '';
+              attachToggle();
+            }
+          });
+        }
+        attachToggle();
+
+        // Forgot password
+        document.getElementById('forgot-password-link')?.addEventListener('click', e => {
+          e.preventDefault();
+          showToast('Password reset is only available via the Blindlee desktop app.', 'warning');
+        });
+
+        // Login form validation
+        loginForm?.addEventListener('submit', e => {
+          e.preventDefault();
+          clearErrors();
+
+          const emailEl = loginForm.querySelector('input[type="email"]');
+          const passEl  = loginForm.querySelector('input[type="password"]');
+          const btn     = loginForm.querySelector('button[type="submit"]');
+          const email   = emailEl.value.trim();
+          const pass    = passEl.value.trim();
+
+          if (!email) { showError(emailEl, 'Please enter your email address.'); return; }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(emailEl, 'This email address is not valid.'); return; }
+          if (!pass)  { showError(passEl,  'Please enter your password.'); return; }
+          if (pass.length < 6) { showError(passEl, 'Password must be at least 6 characters.'); return; }
+
+          btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Signing in...';
+          btn.disabled  = true;
+
+          setTimeout(() => {
+            btn.innerHTML = 'Sign In';
+            btn.disabled  = false;
+            showToast('No account found with these credentials. Please register first.', 'error');
+          }, 1200);
+        });
+
+        function showError(inputEl, msg) {
+          clearErrorFor(inputEl);
+          const div = document.createElement('div');
+          div.className = 'error-msg';
+          div.style.cssText = 'color:#FF6B6B;font-size:0.82rem;margin-top:6px;display:flex;align-items:center;gap:5px;';
+          div.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${msg}`;
+          inputEl.parentNode.insertBefore(div, inputEl.nextSibling);
+          inputEl.style.borderColor = '#FF6B6B';
+          inputEl.style.boxShadow   = '0 0 0 2px rgba(255,107,107,0.25)';
+          inputEl.addEventListener('input', () => clearErrorFor(inputEl), { once: true });
+        }
+
+        function clearErrorFor(inputEl) {
+          inputEl.parentNode.querySelector('.error-msg')?.remove();
+          inputEl.style.borderColor = '';
+          inputEl.style.boxShadow   = '';
+        }
+
+        function clearErrors() {
+          loginForm.querySelectorAll('.error-msg').forEach(el => el.remove());
+          loginForm.querySelectorAll('.form-input').forEach(el => {
+            el.style.borderColor = '';
+            el.style.boxShadow   = '';
+          });
+        }
+
+        /* ---- Toast bildirim sistemi ---- */
+        function showToast(msg, type = 'info') {
+          // Container yoksa oluştur
+          let container = document.getElementById('toast-container');
+          if (!container) {
+            container = document.createElement('div');
+            container.id = 'toast-container';
+            container.style.cssText = `
+              position: fixed;
+              top: 20px;
+              right: 20px;
+              z-index: 99999;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              pointer-events: none;
+            `;
+            document.body.appendChild(container);
+          }
+
+          const colors = {
+            error:   { bg: 'rgba(255,60,60,0.15)',   border: 'rgba(255,60,60,0.45)',   icon: 'fa-circle-exclamation', iconColor: '#FF6B6B' },
+            warning: { bg: 'rgba(255,184,0,0.12)',   border: 'rgba(255,184,0,0.45)',   icon: 'fa-triangle-exclamation', iconColor: '#FFB800' },
+            success: { bg: 'rgba(0,200,83,0.12)',    border: 'rgba(0,200,83,0.45)',    icon: 'fa-circle-check',       iconColor: '#00C853' },
+            info:    { bg: 'rgba(100,180,255,0.12)', border: 'rgba(100,180,255,0.45)', icon: 'fa-circle-info',        iconColor: '#64B4FF' },
+          };
+          const c = colors[type] || colors.info;
+
+          const toast = document.createElement('div');
+          toast.style.cssText = `
+            background: ${c.bg};
+            border: 1px solid ${c.border};
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #fff;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            max-width: 320px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            pointer-events: all;
+            transform: translateX(360px);
+            opacity: 0;
+            transition: transform 0.35s cubic-bezier(0.2,0.9,0.3,1), opacity 0.35s ease;
+            line-height: 1.4;
+          `;
+          toast.innerHTML = `<i class="fa-solid ${c.icon}" style="color:${c.iconColor};margin-top:2px;flex-shrink:0;"></i><span>${msg}</span>`;
+          container.appendChild(toast);
+
+          // Slide in
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              toast.style.transform = 'translateX(0)';
+              toast.style.opacity   = '1';
+            });
+          });
+
+          // Auto remove
+          setTimeout(() => {
+            toast.style.transform = 'translateX(360px)';
+            toast.style.opacity   = '0';
+            setTimeout(() => toast.remove(), 400);
+          }, 4000);
+
+          // Click to dismiss
+          toast.addEventListener('click', () => {
+            toast.style.transform = 'translateX(360px)';
+            toast.style.opacity   = '0';
+            setTimeout(() => toast.remove(), 400);
+          });
+        }
+
+      });
+    </script>
+  
+
+
+<!-- analytics beacon removed (broken local mime) -->
+
+
+</body></html>
