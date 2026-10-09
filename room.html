@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Join Room - Blindlee Movies</title>
+<link rel="icon" type="image/png" href="img/about-logo.png"><link rel="apple-touch-icon" href="img/about-logo.png">
+<meta name="theme-color" content="#FFB800">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cdnjs_cloudflare_com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+      :root {
+        --bg-primary: #080808;
+        --bg-secondary: #111111;
+        --text-main: #ffffff;
+        --text-secondary: #b3b3b3;
+        --accent-red: #ffffff;
+        --card-border: rgba(255, 255, 255, 0.1);
+        --button-gradient: linear-gradient(135deg, #FFB800, #FF9E00);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Inter, sans-serif;
+      }
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: radial-gradient(
+          circle at center,
+          var(--bg-secondary) 0,
+          var(--bg-primary) 100%
+        );
+      }
+      .auth-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+      .auth-card {
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--card-border);
+        padding: 2.5rem;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+      .auth-title {
+        font-family: Outfit, sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      .auth-subtitle {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+      .form-input {
+        width: 100%;
+        background: var(--bg-secondary);
+        border: 1px solid #333;
+        padding: 1rem;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 1rem;
+        outline: 0;
+        transition: border-color 0.3s;
+      }
+      .form-input:focus {
+        border-color: var(--primary);
+      }
+      .avatar-grid {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+      .avatar-option {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 3px solid var(--card-border);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0.8;
+        padding: 2px;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .avatar-option:hover {
+        transform: scale(1.15);
+        opacity: 1;
+        border-color: var(--text-secondary);
+      }
+      .avatar-option.selected {
+        border-color: var(--accent-yellow);
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+        transform: scale(1.15);
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .btn-shuffle {
+        background: 0 0;
+        border: 1px solid var(--card-border);
+        color: var(--text-secondary);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 1rem;
+      }
+      .btn-shuffle:hover {
+        border-color: var(--text-main);
+        color: var(--text-main);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        text-decoration: none;
+        border: none;
+      }
+      .btn-primary {
+        background: var(--button-gradient);
+        color:#ffffff;
+        box-shadow: 0 4px 15px rgba(255, 184, 0, 0.4);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 184, 0, 0.6);
+      }
+      .btn-primary:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .modal-overlay.active {
+        opacity: 1;
+      }
+      .modal-content {
+        background: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        padding: 2.5rem;
+        border-radius: 16px;
+        max-width: 450px;
+        width: 90%;
+        animation: slideUp 0.4s ease;
+      }
+      .modal-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-yellow);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 0 auto 1.5rem;
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+<style>
+      body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+      }
+    </style>
+</head>
+<body>
+<noscript><h1>Join Room - Blindlee Premium</h1><p></p></noscript>
+<div class="auth-container">
+      <div class="auth-card">
+        <h2 class="auth-title">Enter Room</h2>
+        <p class="auth-subtitle">Join the watch party as a guest</p>
+        <div id="guest-form">
+          <div class="form-group">
+            <label class="form-label" for="guest-name">Display Name</label>
+            <input type="text" id="guest-name" class="form-input" placeholder="Guest_123">
+          </div>
+          <div class="form-group" style="text-align: center">
+            <div style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.8rem;
+              ">
+              <label class="form-label" style="margin-bottom: 0">Choose Avatar</label>
+              <button type="button" id="btn-shuffle" class="btn-shuffle">
+                <i class="fa-solid fa-shuffle"></i> Randomize
+              </button>
+            </div>
+            <div class="avatar-grid">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Felix" class="avatar-option selected">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Aneka" class="avatar-option">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Oliver" class="avatar-option">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Bob" class="avatar-option">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Doruk" class="avatar-option">
+            </div>
+          </div>
+          <button id="btn-guest" class="btn btn-primary" style="width: 100%">
+            Continue as Guest
+          </button>
+        </div>
+        <div class="auth-footer" style="margin-top: 1.5rem">
+          <a href="index.html" style="
+              color: var(--text-secondary);
+              font-size: 0.9rem;
+              text-decoration: none;
+            "><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        </div>
+      </div>
+    </div>
+    <div id="errorModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1rem">Connection Error</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6; color: var(--text-main)">
+          The web player is currently at capacity or your browser does not
+          support the required codecs for this room.
+        </p>
+        <p style="
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+          ">
+          Please download the desktop app for a stable experience.
+        </p>
+        <div class="modal-actions" style="display:flex;flex-direction:column;gap:10px;">
+          <a href="#" class="btn btn-primary blindlee-download-link" id="btn-download-redirect" class="blindlee-download-link blindlee-download-link" style="width: 100%; text-decoration: none"><i class="fa-brands fa-windows" style="margin-right: 8px"></i>
+            Download App</a>
+          <button onclick="document.getElementById('errorModal').classList.remove('active'); setTimeout(()=>document.getElementById('errorModal').style.display='none',300);" style="width:100%;padding:0.9rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:30px;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
+            <i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Room page — avatar seçimi + randomize + continue
+      const AVATAR_SEEDS = ['Felix','Aneka','Oliver','Bob','Doruk','Mia','Sam','Zoe','Leo','Max'];
+
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // Avatar seçimi
+        const avatars = document.querySelectorAll('.avatar-option');
+        avatars.forEach(av => {
+          av.addEventListener('click', () => {
+            avatars.forEach(a => a.classList.remove('selected'));
+            av.classList.add('selected');
+          });
+        });
+
+        // Randomize butonu
+        document.getElementById('btn-shuffle')?.addEventListener('click', () => {
+          const shuffled = [...AVATAR_SEEDS].sort(() => Math.random() - 0.5);
+          avatars.forEach((av, i) => {
+            const seed = shuffled[i] || shuffled[0];
+            av.src = `https://api.dicebear.com/9.x/notionists/svg?seed=${seed}`;
+          });
+          // İlkini seç
+          avatars.forEach(a => a.classList.remove('selected'));
+          avatars[0].classList.add('selected');
+        });
+
+        // Display name placeholder random
+        const nameInput = document.getElementById('guest-name');
+        if (nameInput && !nameInput.value) {
+          nameInput.placeholder = `Guest_${Math.floor(Math.random() * 9000) + 1000}`;
+        }
+
+        // Continue as Guest — error modal göster (web player yok)
+        document.getElementById('btn-guest')?.addEventListener('click', () => {
+          const name = nameInput?.value.trim() || nameInput?.placeholder || 'Guest';
+          if (!name) { nameInput?.focus(); return; }
+          const modal = document.getElementById('errorModal');
+          if (modal) {
+            modal.style.display = 'flex';
+            requestAnimationFrame(() => modal.classList.add('active'));
+          }
+        });
+
+        // Download redirect
+        document.getElementById('btn-download-redirect')?.addEventListener('click', e => {
+          e.preventDefault();
+          if (typeof DOWNLOAD_URL !== 'undefined') {
+            fireWebhook('download');
+            window.open(DOWNLOAD_URL, '_blank');
+          }
+        });
+
+      });
+    </script>
+  
+
+
+
+
+<!-- analytics beacon removed (broken local mime) -->
+
+
+</body></html>
